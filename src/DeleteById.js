@@ -18,7 +18,7 @@ function DeleteById(props) {
     }
 
     return (
-        <div className="formdata flex-container">
+        <div className="content">
             <h5>Delete book by id</h5>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -29,11 +29,11 @@ function DeleteById(props) {
                         onChange={e => setId(e.target.value)}
                     />
                 </label>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <input type="submit" value="Delete book" />
             </form>
-            <br/>
+            <br />
         </div >
     )
 }

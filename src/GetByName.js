@@ -20,7 +20,7 @@ function GetByName(props) {
 
 
     return (
-        <div className="formdata flex-container">
+        <div className="content">
             <h5>Get book by name</h5>
             <form onSubmit={handleSubmit}>
                 <label>

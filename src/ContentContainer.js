@@ -11,7 +11,7 @@ function ContentContainer(props) {
 
 
     return (
-        <div className="relative">
+        <div className="content">
             <ul>
                 {props.bookList.map((bookList) => {
                     return (

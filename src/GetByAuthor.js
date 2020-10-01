@@ -4,7 +4,7 @@ import { getByAuthor } from "./fetching"
 
 import './style.css';
 
-function GetByAuthor() {
+function GetByAuthor(props) {
     // state for getById
     const [authorName, setAuthorName] = useState([]);
 
@@ -14,12 +14,13 @@ function GetByAuthor() {
         const showAuthorName = await getByAuthor(authorName);
         console.log(showAuthorName);
         setAuthorName("");
+        props.setState(authorName);
     }
 
 
 
     return (
-        <div className="formdata flex-container">
+        <div className="content">
             <h5>Get book by author</h5>
             <form onSubmit={handleSubmit}>
                 <label>

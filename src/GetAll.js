@@ -13,9 +13,8 @@ function GetAll(props) {
     }
 
     return (
-        <div className="formdata">
+        <div className="content">
             <h5>Get all books</h5>
-            <br />
             <button type="submit" onClick={handleSubmit}>Get all books</button>
             <br />
             <br />

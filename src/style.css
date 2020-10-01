@@ -1,5 +1,5 @@
 h5 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
 }
 
 .button {
@@ -30,15 +30,52 @@ h5 {
     width: 300px;
 }
 
-.flex-container {
+.flexcontainer-outer {
+  display: flex;
+}
+
+.flex-container1 {
     display: flex;
     flex-direction: column;
+    margin-left: 15px;
   }
 
-.relative {
-    position: relative;
-    left: 400px;
-    top: -1370px;
-    width: 400px;
-    border: 3px solid #73AD21;
-  }
+.flexcontainer2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  border-radius: 15px 50px 30px;
+  background: #73AD21;
+  padding: 15px;
+  width: 190px;
+  
+
+}
+
+.bookitem {
+  margin-left: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px 50px 30px;
+  background: #b1d67e;
+  padding: 20px;
+}
+
+ul {
+  padding-inline-start: 0px;
+  list-style-type: none;
+}
+
+p {
+  margin: 0px;
+}
+
+h5 {
+  margin: 2px;
+}
+

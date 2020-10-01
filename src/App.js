@@ -7,9 +7,10 @@ import GetByAuthor from "./GetByAuthor";
 import PostBookForm from "./PostBookForm";
 import PutBookForm from "./PutBookForm";
 import GetAll from "./GetAll";
+import PostCount from "./PostCount";
 import ContentContainer from "./ContentContainer";
 
-import { getAll, getByName, getById } from "./fetching"
+import { getAll, getByName, getById, getByAuthor } from "./fetching"
 
 function App() {
 
@@ -29,31 +30,46 @@ function App() {
     setBookList([await getById(id)]);
   }
 
+  const fetchByAuthor = async (authorName) => {
+    setBookList(await getByAuthor(authorName));
+  }
 
   return (
     <div>
-      <GetAll setState={fetchAll} />
-      <br />
-      <br />
-      <GetByIdForm setState={fetchById}/>
-      <br />
-      <br />
-      <DeleteById setState={fetchAll} />
-      <br />
-      <br />
-      <GetByName setState={fetchByName} />
-      <br />
-      <br />
-      <GetByAuthor />
-      <br />
-      <br />
-      <PostBookForm />
-      <br />
-      <br />
-      <PutBookForm />
-      <br />
-      <br />
-      <ContentContainer bookList={bookList} />
+      <div className="flexcontainer-outer">
+        
+        <div className="flexcontainer1">
+          <GetAll setState={fetchAll} />
+          <br />
+          <br />
+          <GetByIdForm setState={fetchById} />
+          <br />
+          <br />
+          <DeleteById setState={fetchAll} />
+          <br />
+          <br />
+          <GetByName setState={fetchByName} />
+        </div>
+        <br />
+        <br />
+        <div className="flexcontainer2">
+          <GetByAuthor setState={fetchByAuthor} />
+          <br />
+          <br />
+          <PostBookForm setState={fetchAll} />
+          <br />
+          <br />
+          <PutBookForm setState={fetchAll} />
+          <br />
+          <br />
+        </div>
+        <div className="flexcontainer1">
+          <PostCount />
+          <br />
+          <br />
+          <ContentContainer bookList={bookList} />
+        </div>
+      </div>
       <br />
       <br />
     </div>

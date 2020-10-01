@@ -11,7 +11,7 @@ const bookEntity = {
     year: ""
 }
 
-function PostBookForm() {
+function PostBookForm(props) {
     // state for book object
     const [book, setBook] = useState(bookEntity);
     
@@ -22,6 +22,8 @@ function PostBookForm() {
         const returnSt = await postUserData(book);
         console.log(returnSt);
         setBook(bookEntity)
+        props.setState();
+
     }
 
     // updating state for book object
@@ -33,7 +35,7 @@ function PostBookForm() {
       };
 
     return (
-        <div className="formdata">
+        <div className="content">
             <h5>Submit new book to database</h5>
             <form onSubmit={submitToDb} autoComplete="off">
                 <label>

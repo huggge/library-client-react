@@ -12,7 +12,7 @@ const bookEntity = {
     year: ""
 }
 
-function PutBookForm() {
+function PutBookForm(props) {
     // state for book object
     const [putBook, setPutBook] = useState(bookEntity);
     
@@ -23,6 +23,7 @@ function PutBookForm() {
         const returnSt = await UpdateBookById(putBook);
         console.log(returnSt);
         setPutBook(bookEntity)
+        props.setState();
     }
 
     // updating state for book object
@@ -34,7 +35,7 @@ function PutBookForm() {
       };
 
     return (
-        <div className="formdata">
+        <div className="content">
             <h5>Update book by id</h5>
             <form onSubmit={submitToDb} autoComplete="off">
             <label>

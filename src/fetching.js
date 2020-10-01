@@ -104,3 +104,14 @@ export async function getByAuthor(authorName) {
     console.error(error);
   }
 }
+
+// GET book count
+export async function GetBookCount() {
+  try {
+    const response = await fetch("http://localhost:8080/api/count");
+    const json = await response.text();
+    return json;
+  } catch (error) {
+    console.error(error);
+  }
+}
